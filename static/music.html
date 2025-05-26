@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="1_style.css">
+</head>
+
+<body>
+    <header id="nav-placeholder"></header>
+
+    <main>
+        <div class="composer-card" onclick="openComposerInfo('chopin')">
+            <img src="chopin.jpg" />
+            <p>Chopin</p>
+        </div>
+
+    </main>
+
+    <script>
+        fetch("nav.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+    </script>
+
+
+</body>
+
+</html>

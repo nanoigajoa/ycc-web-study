@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="1_style.css">
+</head>
+
+<body>
+    <header id="nav-placeholder"></header>
+
+    <main>
+        <section id="boj">
+            <h2>Solved.ac Profile</h2>
+            <div id="boj-info"></div>
+        </section>
+
+    </main>
+
+    <script>
+        fetch("nav.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+    </script>
+    <script>
+        fetch("/boj")
+            .then(res => res.json())
+            .then(data => {
+                const tierImage = `https://static.solved.ac/tier_small/${data.tier}.svg`;
+                const bojHTML = `
+          <p><strong>백준 아이디:</strong> ${data.handle}</p>
+          <p><strong>푼 문제 수:</strong> ${data.solvedCount}개</p>
+          <p><strong>티어:</strong> <img src="${tierImage}" alt="Tier"> (${data.tier})</p>
+          <p><strong>랭킹:</strong> ${data.rank}위</p>
+        `;
+                document.getElementById("boj-info").innerHTML = bojHTML;
+            });
+    </script>
+
+    <div id="clock" style="font-size: 1.2em; font-weight: 500; text-align: center;">
+        <p id="clock-time"></p>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+
+            const timeString = `${year}-${month}-${day} (${hours}:${minutes} 기준)`;
+
+            document.getElementById('clock-time').textContent = timeString;
+        }
+        updateClock();
+        setInterval(updateClock, 60000); // 매 1분마다 갱신
+    </script>
+
+
+</body>
+
+</html>

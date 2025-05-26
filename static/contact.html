@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="1_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <header id="nav-placeholder"></header>
+
+    <main>
+        <section id="contact">
+            <h2 class="contact-theme">Contact</h2>
+            <i class="fa-solid fa-phone"></i>
+            <p class="contact-info">
+                email : <span id="copy-email" style="cursor: pointer;">pja5718@naver.com</span><br>
+                phone : <span id="copy-phone" style="cursor: pointer;">010-7918-1423</span><br>
+                BOJ : <a href="https://solved.ac/profile/pja5718" target="_blank"
+                    rel="noopener noreferrer">pja5718</a><br>
+                GitHub : <a href="https://github.com/nanoigajoa" target="_blank"
+                    rel="noopener noreferrer">nanoigajoa</a>
+
+            </p>
+        </section>
+    </main>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(text + ' 가 복사되었습니다!');
+            });
+        }
+
+        document.getElementById('copy-email').addEventListener('click', () => {
+            copyToClipboard('pja5718@naver.com');
+        });
+
+        document.getElementById('copy-phone').addEventListener('click', () => {
+            copyToClipboard('010-7918-1423');
+        });
+    </script>
+
+    <script>
+        fetch("nav.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

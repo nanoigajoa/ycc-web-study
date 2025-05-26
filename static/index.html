@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="1_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+
+<body>
+    <header id="nav-placeholder"></header>
+
+    <main>
+        <section id="skills">
+            <h2>Skills & Tools</h2>
+            <div class="skill-category">
+                <h3>프론트엔드</h3>
+                <p>HTML, CSS, JavaScript</p>
+                <div class="tech-icons">
+                    <i class="devicon-html5-plain colored"></i>
+                    <i class="devicon-css3-plain colored"></i>
+                    <i class="devicon-javascript-plain colored"></i>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>백엔드</h3>
+                <p>Python, Django</p>
+                <div class="tech-icons">
+                    <i class="devicon-python-plain colored"></i>
+                    <i class="devicon-django-plain colored"></i>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>툴 및 환경</h3>
+                <p>R, Git, Github, VS Code</p>
+                <div class="tech-icons">
+                    <i class="devicon-r-plain colored"></i>
+                    <i class="devicon-git-plain colored"></i>
+                    <i class="devicon-github-plain colored"></i>
+                    <i class="devicon-vscode-plain colored"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        fetch("nav.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="1_style.css">
+</head>
+<body>
+    <header id="nav-placeholder"></header>
+    
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-info">
+                <p>2002.11.08</p>
+                <p>ISFP</p>
+                <p>
+                    선화예술고등학교 (2018~2020)<br>
+                    <!-- <a href="https://www.sunhwa.org/img/logo.png" target="_blank">
+                    <img src="https://www.sunhwa.org/img/logo.png" alt="선화 로고" width="150">
+                    </a> -->
+                </p>
+                <p>
+                    연세대학교 관현악과 (2022~)<br>
+                    <!-- <a href="https://yonsei.ac.kr/sites/sc/images/common/img-header-logo-color.png" target="_blank">
+                    <img src="https://yonsei.ac.kr/sites/sc/images/common/img-header-logo-color.png" alt="연대 로고" width="100">
+                    </a> -->
+                </p>
+            </div>
+        </section>
+          
+    </main>
+    <script>
+        fetch("nav.html")
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+          });
+    </script>
+</body>
+</html>

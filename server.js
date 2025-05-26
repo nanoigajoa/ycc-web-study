@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static files (like index.html, CSS, JS)
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname,)));
 
 // API route for Solved.ac data
 app.get('/boj', async (req, res) => {

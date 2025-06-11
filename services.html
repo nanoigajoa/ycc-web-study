@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="1_style.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="services.css">
+
 </head>
+
 <body>
     <header id="nav-placeholder"></header>
-    
+
     <main>
         <section id="services">
             <h2>Services</h2>
             <p class="services-info">
-                24-1<br><인공지능프로그래밍> 수강<br>
-                24-겨울학기<br> 겨울DX코딩캠프(데이터입문과정) 수료<br>
-                25-1<br>ycc <웹기초 스터디>, 모르고리즘 세션수강
-                
+                24-1<br>
+                <인공지능프로그래밍> 수강<br>
+                    24-겨울학기<br> 겨울DX코딩캠프(데이터입문과정) 수료<br>
+                    25-1<br>ycc <웹기초 스터디>, 모르고리즘 세션수강
+
             </p>
         </section>
     </main>
 
     <script>
         fetch("nav.html")
-          .then(res => res.text())
-          .then(data => {
-            document.getElementById("nav-placeholder").innerHTML = data;
-          });
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
     </script>
 </body>
+
 </html>

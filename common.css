@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  text-align: center;
+  margin: 2%;
+  font-size: 20px;
+}
+
+.contact-info,
+.about-info,
+.services-info {
+  text-align: center;
+  font-size: large;
+  line-height: 3.5;
+}
+
+.logo {
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: bold;
+  text-decoration: dotted;
+  color: #ffffff;
+}
+
+.logo:hover {
+  color: #00249c;
+}

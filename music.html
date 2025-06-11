@@ -5,16 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="1_style.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="common.css">
+
 </head>
 
 <body>
     <header id="nav-placeholder"></header>
 
     <main>
-        <div class="composer-card" onclick="openComposerInfo('chopin')">
-            <img src="chopin.jpg" />
-            <p>Chopin</p>
+        <section id="musician-intro">
+            <div class="intro-text"></div>
+            <p>
+                6살 무렵 첼로와 피아노를 처음 접하고 음악에 관심이 생겨 <br>선화예술고등학교를 졸업하고
+                현재 연세대학교에서 첼리스트 조영창, 최정은 교수님을 사사하며 <br>음악의 깊이를 탐구하고 있습니다.
+            </p>
+            </div>
+            <img src="images/IMG_2479.jpg" alt="박주안 영상">
+        </section>
+
+        <section id="favorite-piece">
+            <h2>My favorite piece</h2>
+
+            <div class="composer-info">
+                <div class="video-thumbnail" onclick="openVideo('Y-T6dHhEoZw')">
+                    <img src="https://img.youtube.com/vi/Y-T6dHhEoZw/hqdefault.jpg" alt="5-4finale">
+                </div>
+                <div class="composer-text">
+                    <h3>Tchaikovsky</h3>
+                    <p>Russia 1840-1893<br>후기낭만주의</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="videoModal" class="modal" style="display: none;">
+            <span class="close" onclick="closeVideo()">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
         </div>
 
     </main>
@@ -26,6 +52,23 @@
                 document.getElementById("nav-placeholder").innerHTML = data;
             });
     </script>
+
+    <script>
+        function openVideo(videoId) {
+            var modal = document.getElementById("videoModal");
+            var iframe = document.getElementById("videoFrame");
+            iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+            modal.style.display = "flex";
+        }
+
+        function closeVideo() {
+            var modal = document.getElementById("videoModal");
+            var iframe = document.getElementById("videoFrame");
+            iframe.src = "";
+            modal.style.display = "none";
+        }
+    </script>
+
 
 
 </body>
